@@ -16,6 +16,57 @@ import com.rays.common.BaseDTO;
  * Author Amit Bansal 
  */
 
+/**
+ * @author Amit
+ *
+ */
+/**
+ * @author Amit
+ *
+ */
+/**
+ * @author Amit
+ *
+ */
+/**
+ * @author Amit
+ *
+ */
+/**
+ * @author Amit
+ *
+ */
+
+
+
+/**
+ * @author Amit
+ *
+ */
+/**
+ * @author Amit
+ *
+ */
+/**
+ * @author Amit
+ *
+ */
+/**
+ * @author Amit
+ *
+ */
+/**
+ * @author Amit
+ *
+ */
+/**
+ * @author Amit
+ *
+ */
+/**
+ * @author Amit
+ *
+ */
 @Entity
 @Table(name = "ST_USER")
 public class UserDTO extends BaseDTO {
@@ -148,6 +199,8 @@ public class UserDTO extends BaseDTO {
 	public void setRoleId(Long roleId) {
 		this.roleId = roleId;
 	}
+	
+	
 
 	public String getPhone() {
 		return phone;
@@ -241,6 +294,7 @@ public class UserDTO extends BaseDTO {
 		return id + "";
 	}
 
+	
 	public String getValue() {
 		return firstName + " " + lastName;
 	}

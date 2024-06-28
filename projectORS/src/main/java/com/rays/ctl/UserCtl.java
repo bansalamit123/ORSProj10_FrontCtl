@@ -214,6 +214,7 @@ public class UserCtl extends BaseCtl<UserForm, UserDTO, UserServiceInt> {
 		System.out.println("User ID id --------------Amit Bansal" + userId);
 
 		UserDTO userDTO = baseService.findById(userId, userContext);
+		System.out.println("Amit>>>>>>>>>>>>>..."+userId);
 
 		AttachmentDTO doc = new AttachmentDTO(file);
 
@@ -232,6 +233,8 @@ public class UserCtl extends BaseCtl<UserForm, UserDTO, UserServiceInt> {
 		System.out.println("before calling save");
 
 		Long imageId = attachmentService.save(doc, userContext);
+		
+		System.out.println("Bansal>>>>>>>>>>>"+imageId);
 
 		System.out.println("after save");
 

@@ -238,10 +238,16 @@ public abstract class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends B
 		}
 		try {
 			T dto = (T) form.getDto();
-			System.out.println("237----------->" + dto);
+			System.out.println("Bansal>>>>>"+dto.getId());
+			//System.out.println("237----------->" + dto);
+			
+		
 			if (dto.getId() != null && dto.getId() > 0) {
 				T existDto1 = (T) baseService.findByUniqueKey(dto.getUniqueKey(), dto.getUniqueValue(), userContext);
 				if (existDto1 != null && dto.getId() != existDto1.getId()) {
+					System.out.println("inside exisdto");
+					System.out.println("AmitBansal>>>>>>"+dto.getId());
+					System.out.println("AmitBansal>>>>>>"+existDto1.getId());
 					res.addMessage(dto.getLabel() + " already exist");
 					res.addData(dto);
 					res.setSuccess(false);
@@ -253,6 +259,7 @@ public abstract class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends B
 				System.out.println("before calling add of baseservice");
 				if (dto.getUniqueKey() != null && !dto.getUniqueKey().equals("")) {
 					T existDto = (T) baseService.findByUniqueKey(dto.getUniqueKey(), dto.getUniqueValue(), userContext);
+					System.out.println("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ");
 					if (existDto != null) {
 						System.out.println("247----------->" + existDto);
 						res.addMessage(dto.getLabel() + " already exist");
@@ -260,10 +267,12 @@ public abstract class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends B
 						return res;
 					}
 				}
-
+				System.out.println("AmitAmit>>>>>>>"+dto.getId());
 				baseService.add(dto, userContext);
+				System.out.println("BansalBansal>>>>>>>"+dto.getId());
 			}
 			res.addData(dto.getId());
+			
 		} catch (Exception e) {
 			res.setSuccess(false);
 			res.addMessage(e.getMessage());
