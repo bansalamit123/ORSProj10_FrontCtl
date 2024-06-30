@@ -198,7 +198,7 @@ export class BaseCtl implements OnInit {
    */
   populateForm(form, data) {
     form.id = data.id;
-    console.log(form.id + 'formid in base ctl populate form');
+    console.log(form.iduser + 'formid in base ctl populate form');
   }
 
   /**

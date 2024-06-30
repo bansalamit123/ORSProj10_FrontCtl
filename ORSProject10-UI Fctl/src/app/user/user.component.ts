@@ -49,8 +49,9 @@ export class UserComponent extends BaseCtl {
           _self.form.inputerror = res.result.inputerror;
         }
         _self.form.message = res.result.message;
+        _self.form.data.id = res.result.data.id;
       }
-      _self.form.data.id = res.result.data;
+     
       console.log('FORM', _self.form);
     });
   }

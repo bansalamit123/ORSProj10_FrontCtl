@@ -1,16 +1,13 @@
-
 <app-navbar></app-navbar>
 <style>
-#nnn{
-  background: none;
-  border: none;
-}
+  #nnn {
+    background: none;
+    border: none;
+  }
+</style>
 
-</style> 
-
-<div class="content-wrapper"
-style="
-background: url(assets/files/wall.jpg) no-repeat center center;
+<div class="content-wrapper" style="
+background: url(assets/files/1020.jpg) no-repeat center center;
 background-attachment: fixed;
 background-size: cover;width:auto;
   height: 105vh;">
@@ -38,7 +35,7 @@ background-size: cover;width:auto;
             placeholder="{{'Search dob' | translate}}">
 
         </div> -->
-        
+
         <!-- <div class="col-sm-2">
           <input type="text" class="form-control" [(ngModel)]="form.searchParams.loginId" placeholder="{{'Search Email' | translate}}">
         </div> -->
@@ -61,7 +58,7 @@ background-size: cover;width:auto;
           <button (click)="forward('/user')" type="button" class="btn btn-success">{{'Add User' | translate}}
           </button>
         </div>
-        
+
 
         <div class="col-sm-1">
           <button (click)="deleteMany()" class="btn btn-danger">
@@ -80,11 +77,10 @@ background-size: cover;width:auto;
       </div>
       <div class="p-1">
         <div class="table-responsive">
-
-          <table class="table table-bordered table-hover font-weight-bold text-dark">
+          <table class="table table-bordered table-hover  font-weight-bold  text-blac" style="font-size: large;">
             <thead class="thead-dark text-uppercase ">
               <tr align="center">
-                <th><input type="checkbox" [(ngModel)]="isMasterSel"  name="list_name" value="h1" 
+                <th><input type="checkbox" [(ngModel)]="isMasterSel" name="list_name" value="h1"
                     (change)="checkUncheckAll($event)" /></th>
                 <th>{{'S.No' | translate}}</th>
                 <th>{{'Image' | translate}}</th>
@@ -101,14 +97,15 @@ background-size: cover;width:auto;
             </thead>
             <tbody>
               <tr *ngFor="let m of form.list; let i = index" align="center">
-                <td> <input type="checkbox" #checkboxes (change)="checklistUpdate()" [disabled]="m.roleName=='Admin'" name="list_name" id="{{m.id}}" value="{{isMasterSel}}" />
+                <td> <input type="checkbox" #checkboxes (change)="checklistUpdate()" [disabled]="m.roleName=='Admin'"
+                    name="list_name" id="{{m.id}}" value="{{isMasterSel}}" />
                 </td>
                 <td> {{(form.pageNo*5)+i+ 1}} </td>
-                
 
-                
+
+
                 <td>
-                  <div *ngIf="m.imageId"> 
+                  <div *ngIf="m.imageId">
                     <img src="http://localhost:8084/User/profilePic/{{m.id}}" height="55px" width="80px">
                   </div>
                   <div *ngIf="!m.imageId">
@@ -125,7 +122,8 @@ background-size: cover;width:auto;
                 <td> {{ m.dob | date : 'dd-MM-yyyy'}} </td>
                 <td>
 
-                  <button  class="fa fa-edit text-primary " id="nnn" [disabled]="m.roleName=='Admin'" (click)="forward( '/user/' +  m.id)" style="
+                  <button class="fa fa-edit text-primary " id="nnn" [disabled]="m.roleName=='Admin'"
+                    (click)="forward( '/user/' +  m.id)" style="
                   cursor: pointer;"></button>
                   <!-- <a (click)="forward( '/user/' +  m.id)" style="
                     cursor: pointer;">
@@ -148,25 +146,28 @@ background-size: cover;width:auto;
           <table style="width: 100%;">
             <tr>
               <td style="width: 50%;">
-          <button (click)="previous()" [disabled]="form.pageNo == 0" class="btn btn-info"> {{'Previous' | translate
-            }} </button></td>
+                <button (click)="previous()" [disabled]="form.pageNo == 0" class="btn btn-info"> {{'Previous' |
+                  translate
+                  }} </button>
+              </td>
 
-            <td *ngIf="form.list.length!=0" style="width: 50%;"></td>
-            <td *ngIf="form.list.length==0" style="width: 50%;"><a class="btn btn-warning mr-1" [routerLink]="['/userlist']" (click)="exit()">{{'Back' | translate}}</a></td>
+              <td *ngIf="form.list.length!=0" style="width: 50%;"></td>
+              <td *ngIf="form.list.length==0" style="width: 50%;"><a class="btn btn-warning mr-1"
+                  [routerLink]="['/userlist']" (click)="exit()">{{'Back' | translate}}</a></td>
 
 
-        
-            <td><button (click)="next()" [disabled]="nextList==0" type="button" class="btn btn-info"> {{'Next' |
-              translate }}</button></td>
+
+              <td><button (click)="next()" [disabled]="nextList==0" type="button" class="btn btn-info"> {{'Next' |
+                  translate }}</button></td>
             </tr>
-            </table>
+          </table>
 
 
 
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
-</div>
 </div>
 <app-footer></app-footer>
