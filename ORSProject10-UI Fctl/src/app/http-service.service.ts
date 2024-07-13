@@ -36,9 +36,10 @@ export class HttpServiceService {
     }, error => {
       console.log('ORS Error--', error);
       if (error.status === 401) {
-        
+
         localStorage.clear();
-        this.userparams.url=this.router.url;
+        this.userparams.url = this.router.url;
+        console.log('URL :: ' + this.router.url);
         this.router.navigate(['/login'], {
           queryParams: { errorMessage: error.error.error },
         })

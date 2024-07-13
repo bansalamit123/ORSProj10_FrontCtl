@@ -149,6 +149,7 @@ deleteMany(){
   this.deleteRecordList.length=0;
   console.log('record deleting start ')
   var isRecordSelected:boolean = false ;
+  this.form.pageNo=0;
  
     this.checkboxes.forEach((element) => {
       if (element.nativeElement.checked) {
@@ -159,7 +160,8 @@ deleteMany(){
     });     
   
     if(isRecordSelected){
-      console.log('record(s) for delete ' + this.deleteRecordList) ;       
+      console.log('record(s) for delete ' + this.deleteRecordList) ;  
+         
       super.deleteMany(this.deleteRecordList + '?pageNo=' +this.form.pageNo,function(){
       //  this.search();  
             

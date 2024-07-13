@@ -124,20 +124,14 @@ public abstract class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends B
 	 * @param id
 	 * @return
 	 */
-	@GetMapping("delete/{id}")
-	public ORSResponse delete(@PathVariable long id) {
-		System.out.println("BaseCtl Delete() method run........vipin");
-		ORSResponse res = new ORSResponse(true);
-		try {
-			T dto = baseService.delete(id, userContext);
-			res.addData(dto);
-			System.out.println("Record Deleted Successfully");
-		} catch (Exception e) {
-			res.setSuccess(false);
-			res.addMessage(e.getMessage());
-		}
-		return res;
-	}
+	/*
+	 * @GetMapping("delete/{id}") public ORSResponse (@PathVariable long id) {
+	 * System.out.println("BaseCtl Delete() method run........amit"); ORSResponse
+	 * res = new ORSResponse(true); try { T dto = baseService.delete(id,
+	 * userContext); res.addData(dto);
+	 * System.out.println("Record Deleted Successfully"); } catch (Exception e) {
+	 * res.setSuccess(false); res.addMessage(e.getMessage()); } return res; }
+	 */
 
 	@PostMapping("deleteMany/{ids}")
 	public ORSResponse deleteMany(@PathVariable String[] ids, @RequestParam("pageNo") String pageNo, @RequestBody F form) {

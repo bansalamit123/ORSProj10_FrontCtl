@@ -256,9 +256,11 @@ export class BaseCtl implements OnInit {
 
     deleteMany(id, callback?) {
     var _self = this;
-    this.serviceLocator.httpService.post(_self.api.deleteMany + "/" + id, this.form.data, function (res) {
+    this.serviceLocator.httpService.post(_self.api.deleteMany + "/" + id, this.form.searchParams, function (res) {
       if (res.success) {
         _self.form.message = "Data is deleted";
+        
+        
 
         if (callback) {
           console.log('Response Success and now Calling Callback');
@@ -266,6 +268,7 @@ export class BaseCtl implements OnInit {
           console.log("List ::  ", + res.data);
           console.log("List Size", _self.form.list.length);
           //  callback();       
+          
         }
       } else {
         _self.form.error = true;
