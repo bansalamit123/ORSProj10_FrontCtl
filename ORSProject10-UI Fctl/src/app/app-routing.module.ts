@@ -34,6 +34,10 @@ import { ChangepasswordComponent } from "./user/changepassword.component";
 import { LoaderComponent } from './loader/loader.component';
 import { SpinnerComponent} from './spinner/spinner.component';
 import {MyprofileComponent} from './user/myprofile.component';
+import { LeadComponent } from './lead/lead.component';
+import { LeadlistComponent } from './lead/leadlist.component';
+
+
 
 const routes: Routes = [
     {
@@ -247,6 +251,26 @@ const routes: Routes = [
 
     }, 
 
+
+    {
+        path: 'lead',
+        component: LeadComponent
+      
+    },
+    {
+        path: 'leadlist',
+        component : LeadlistComponent
+      
+    },
+    {
+        path : 'lead/:id',
+        component : LeadComponent
+      
+    },
+   
+
+   
+   
     
     
 ];

@@ -50,8 +50,7 @@ export class HttpServiceService {
 
   post(endpoint, bean, callback) {
     return this.httpClient.post(endpoint, bean, { withCredentials: true }).subscribe((data) => {
-      console.log(data);
-      callback(data);
+       callback(data);
 
     }, error => {
       console.log('ORS Error--', error);

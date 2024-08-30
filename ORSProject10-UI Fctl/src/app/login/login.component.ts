@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     sessionExpiredMsg: '',
     methodType: '',
   };
-
+  
 
   constructor(private httpService: HttpServiceService, private dataValidator: DataValidator, private router: Router,
     private cookieService: CookieService, private route: ActivatedRoute, private serviceLocator: ServiceLocatorService) {

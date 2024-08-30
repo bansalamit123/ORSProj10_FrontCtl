@@ -150,6 +150,7 @@ public abstract class BaseDTO implements Serializable, DropdownList, Comparable<
 	 * 
 	 * @return
 	 */
+	
 	public boolean isGroupFilter() {
 		return true;
 	}

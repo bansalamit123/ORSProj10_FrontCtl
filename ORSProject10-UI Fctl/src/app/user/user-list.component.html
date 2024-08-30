@@ -24,7 +24,8 @@ background-size: cover;width:auto;
       <div class="row p-1">
         <div class="col-sm-1"></div>
         <div class="col-sm-2">
-          <input type="text" class="form-control" [(ngModel)]="form.searchParams.firstName"
+          <input type="text" class="form-control" [(ngModel)]="form.searchParams.firstName" maxlength="15"
+          (keypress)=" validateMobileInput($event)" 
             placeholder="{{'Search First Name' | translate}}">
 
         </div>
@@ -36,7 +37,7 @@ background-size: cover;width:auto;
 
         </div>   -->
 
-        <!-- <div class="col-sm-2">
+        <!-- <div class="col-sm-2"> 
           <input type="text" class="form-control" [(ngModel)]="form.searchParams.loginId" placeholder="{{'Search Email' | translate}}">
         </div> -->
         <div class="col-sm-2">

@@ -52,6 +52,11 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { FooterComponent } from './footer/footer.component';
 import { MyprofileComponent } from './user/myprofile.component';
 import { AuthService } from './auth-service.service';
+import { LeadComponent } from './lead/lead.component';
+import { LeadlistComponent } from './lead/leadlist.component';
+
+
+
 
 
 // import { AuthService } from './auth.service';
@@ -100,6 +105,12 @@ export function myHttpLoader(http: HttpClient) {
     SpinnerComponent,
     FooterComponent,
     MyprofileComponent,
+    LeadComponent,
+    LeadlistComponent,
+   
+    
+    
+    
 
 
 
